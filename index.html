@@ -1,0 +1,1006 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>OS Labs | Digital Presence & Growth</title>  <meta name="description" content="OS Labs helps businesses build a credible digital presence through strategic marketing, professional website design, social media optimization, and creative solutions.">  <meta name="theme-color" content="#ffffff">  <style>
+    :root {
+      --purple: #7138d4;
+      --purple-dark: #5123a8;
+      --purple-light: #f3edff;
+      --black: #17131f;
+      --grey: #696474;
+      --white: #ffffff;
+      --border: #eae5f1;
+      --radius: 22px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(90%, var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+      max-width: 850px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+    }
+
+    p {
+      color: var(--grey);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 13px 23px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: transform 0.25s ease,
+                  background 0.25s ease,
+                  border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--purple);
+    }
+
+    .btn-primary:hover {
+      background: var(--purple-dark);
+    }
+
+    .btn-secondary {
+      color: var(--black);
+      background: var(--white);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--purple);
+    }
+
+    /* Navigation */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    .logo span {
+      color: var(--purple);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.91rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--purple);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--black);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(
+          ellipse at 90% 15%,
+          rgba(113, 56, 212, 0.12),
+          transparent 38%
+        ),
+        var(--white);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero-copy h1 span {
+      color: var(--purple);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 26px 0 30px;
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .consultation-note {
+      margin-top: 18px;
+      font-size: 0.85rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-orbit {
+      width: min(100%, 390px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: linear-gradient(
+        135deg,
+        #f2eaff,
+        #e4d4ff
+      );
+      display: grid;
+      place-items: center;
+    }
+
+    .visual-card {
+      width: 76%;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 25px 70px rgba(69, 36, 117, 0.14);
+      transform: rotate(-4deg);
+    }
+
+    .visual-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .visual-card p {
+      font-size: 0.9rem;
+    }
+
+    .visual-label {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 7px 12px;
+      border-radius: 30px;
+      color: var(--purple-dark);
+      background: var(--purple-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* Problem section */
+
+    .problem {
+      background: #faf8fd;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .problem-copy h2 {
+      margin-bottom: 20px;
+    }
+
+    .problem-copy > p {
+      margin-bottom: 18px;
+    }
+
+    .benefit-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .benefit {
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .benefit h3 {
+      margin-bottom: 7px;
+      font-size: 1.1rem;
+    }
+
+    .benefit p {
+      font-size: 0.94rem;
+    }
+
+    /* Services */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 28px;
+      background: var(--purple-light);
+      border: 1px solid #e7dcff;
+      border-radius: var(--radius);
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(81, 35, 168, 0.10);
+    }
+
+    .service-number {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 24px;
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--purple);
+      font-weight: 800;
+    }
+
+    .service-card h3 {
+      margin-bottom: 13px;
+      font-size: 1.25rem;
+    }
+
+    .service-card p {
+      font-size: 0.94rem;
+      margin-bottom: 20px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--purple-dark);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Approach */
+
+    .approach {
+      background: #faf8fd;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .approach-step {
+      padding-top: 20px;
+      border-top: 2px solid #d9c6ff;
+    }
+
+    .approach-step .step-number {
+      display: block;
+      color: var(--purple);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .approach-step h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .approach-step p {
+      font-size: 0.92rem;
+    }
+
+    /* Portfolio */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .portfolio-preview {
+      min-height: 210px;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: linear-gradient(135deg, #f3edff, #e4d5ff);
+    }
+
+    .preview-window {
+      width: 100%;
+      padding: 18px;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(69, 36, 117, 0.10);
+    }
+
+    .preview-bar {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 18px;
+    }
+
+    .preview-bar span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #c7b5e7;
+    }
+
+    .preview-line {
+      height: 9px;
+      margin: 9px 0;
+      border-radius: 5px;
+      background: #eee8f8;
+    }
+
+    .preview-line.short {
+      width: 60%;
+      background: #d9c6ff;
+    }
+
+    .portfolio-content {
+      padding: 24px;
+    }
+
+    .project-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 9px;
+      border-radius: 30px;
+      background: var(--purple-light);
+      color: var(--purple-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .portfolio-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .portfolio-content p {
+      font-size: 0.92rem;
+      margin-bottom: 17px;
+    }
+
+    /* CTA */
+
+    .cta-section {
+      padding: 30px 0 100px;
+    }
+
+    .cta-box {
+      padding: 65px 35px;
+      text-align: center;
+      color: var(--white);
+      background: linear-gradient(
+        135deg,
+        var(--purple),
+        #5021a4
+      );
+      border-radius: 28px;
+    }
+
+    .cta-box h2 {
+      max-width: 780px;
+      margin: 0 auto 20px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #eee5ff;
+    }
+
+    .cta-box .btn {
+      color: var(--purple-dark);
+      background: var(--white);
+    }
+
+    .cta-box .btn:hover {
+      background: #f4edff;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 50px 0 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      max-width: 380px;
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+      font-size: 0.93rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--purple);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .hero-visual {
+        min-height: 320px;
+      }
+
+      .services-grid,
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        min-height: 72px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 71px;
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 5% 22px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 12px 0;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0 55px;
+      }
+
+      .hero-grid {
+        gap: 15px;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 280px;
+      }
+
+      .visual-orbit {
+        width: 280px;
+      }
+
+      .visual-card {
+        padding: 22px;
+      }
+
+      .services-grid,
+      .portfolio-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .cta-section {
+        padding: 10px 0 65px;
+      }
+
+      .cta-box {
+        padding: 45px 22px;
+        border-radius: 20px;
+      }
+
+      .footer-top,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style></head><body>  <!-- NAVIGATION -->  <header class="navbar">
+    <div class="container nav-inner">  <a class="logo" href="index.html" aria-label="OS Labs Home">
+    OS<span>Labs</span>
+  </a>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="navLinks"
+  >
+    ☰
+  </button>
+
+  <nav aria-label="Main navigation">
+    <ul class="nav-links" id="navLinks">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <a
+    class="btn btn-primary nav-cta"
+    href="https://wa.me/2348103895850"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Let's Talk ↗
+  </a>
+
+</div>
+
+  </header>  <main><!-- HERO -->
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+
+      <p class="eyebrow">Digital Presence. Business Growth.</p>
+
+      <h1>
+        YOUR DIGITAL PRESENCE SHOULD
+        <span>DO MORE</span> FOR YOUR BUSINESS.
+      </h1>
+
+      <p class="hero-description">
+        We help businesses build a credible online presence,
+        strengthen their brand positioning, and turn digital
+        visibility into customer opportunities through strategic
+        marketing, professional website design, and
+        conversion-focused solutions.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/2348103895850?text=Hello%20OS%20Labs%2C%20I%27d%20like%20to%20discuss%20how%20you%20can%20help%20my%20business."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Let's Talk on WhatsApp ↗
+        </a>
+
+        <a class="btn btn-secondary" href="services.html">
+          Explore Our Services →
+        </a>
+
+      </div>
+
+      <p class="consultation-note">
+        Free 30-minute consultation. No commitment required.
+      </p>
+
+    </div>
+
+    <div class="hero-visual" aria-label="Digital growth concept">
+
+      <div class="visual-orbit">
+
+        <div class="visual-card">
+
+          <p class="eyebrow">The OS Labs Approach</p>
+
+          <h3>Build. Position. Grow.</h3>
+
+          <p>
+            A clearer strategy. A stronger brand.
+            A more purposeful digital presence.
+          </p>
+
+          <span class="visual-label">
+            Your Growth Begins Here
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+
+<section class="section problem">
+  <div class="container problem-grid">
+
+    <div class="problem-copy">
+
+      <p class="eyebrow">Why Your Presence Matters</p>
+
+      <h2>
+        BEING ONLINE ISN'T ENOUGH.
+        YOUR PRESENCE NEEDS TO WORK FOR YOU.
+      </h2>
+
+      <p>
+        Having a website or social media account is only the
+        beginning. Your digital presence should help people
+        understand your business, trust your brand, and take
+        the next step.
+      </p>
+
+      <p>
+        We help businesses identify opportunities to improve
+        their online presentation and make their digital
+        activities more purposeful.
+      </p>
+
+    </div>
+
+    <div class="benefit-list">
+
+      <article class="benefit">
+        <h3>01. Visibility</h3>
+        <p>
+          Help the right audience discover your business
+          through a more intentional digital presence.
+        </p>
+      </article>
+
+      <article class="benefit">
+        <h3>02. Credibility</h3>
+        <p>
+          Present your brand professionally and communicate
+          your value clearly to potential customers.
+        </p>
+      </article>
+
+      <article class="benefit">
+        <h3>03. Conversion</h3>
+        <p>
+          Create clearer pathways that help interested
+          visitors enquire about your products or services.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+  <div class="container">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">What We Do</p>
+
+      <h2>
+        EVERYTHING YOUR BUSINESS NEEDS
+        TO SHOW UP BETTER ONLINE.
+      </h2>
+
+      <p>
+        Practical digital solutions to help your business
+        build credibility, improve visibility, and attract
+        the right audience.
+      </p>
+
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service-card">
+
+        <span class="service-number">01</span>
+
+        <h3>Digital Presence Strategy</h3>
+
+        <p>
+          Identify opportunities to improve your online
+          positioning and build a more coordinated digital presence.
+        </p>
+
+        <a class="text-link" href="services.html">
+          Service details →
+        </a>
+
+      </article>
+
+      <article class="service-card">
+
+        <span class="service-number">02</span>
+
+        <h3>Website Design</h3>
+
+        <p>
+          Build a professional, responsive website that
+          communicates your value and guides visitors towards action.
+        </p>
+
+        <a class="text-link" href="services.html">
+          Service details →
+        </a>
+
+      </article>
+
+      <article class="service-card">
+
+        <span class="service-number">03</span>
+
+        <h3>Social Media Optimization</h3>
+
+        <p>
+          Improve your profiles, brand consistency, and content
+          presentation to create a more credible social presence.
+        </p>
+
+        <a class="text-link" href="services.html">
+          Service details →
+        </a>
+
+      </article>
+
+      <article class="service-card">
+
+        <span class="service-number">04</span>
+
+        <h3>Digital Marketing</h3>
+
+        <p>
+          Plan and execute marketing activities around your
+          audience, business objectives, and customer journey.
+        </p>
+
+        <a class="text-link" href="services.html">
+          Service details →
+        </a>
+
+      </article>
+
+      <article class="service-card">
+
+        <span class="service-number">05</span>
+
+        <h3>Paid Advertising</h3>
+
+        <p>
+          Plan targeted campaigns with clear objectives,
+          relevant audiences, and performance monitoring.
+        </p>
+
+        <a class="text-link" href="services.html">
+          Service details →
+        </a>
+
+      </article>
+
+      <article class="service-card">
+
+        <span class="service-number">06</span>
+
+        <h3>Brand Identity & Visual Content</h3>
+
+        <p>
+          Create consistent brand materials and compelling
+          visuals that help your business present itself professionally.
+        </p>
+
+        <a class="text-link" href="services.html">
+          Service det
