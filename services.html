@@ -1,0 +1,773 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">  <title>Our Services | OS Labs</title>  <meta name="description" content="Explore OS Labs digital presence strategy, website design, social media optimization, digital marketing, paid advertising, and brand identity services.">  <style>
+    :root {
+      --purple: #7138d4;
+      --purple-dark: #5123a8;
+      --light: #f3edff;
+      --black: #17131f;
+      --grey: #696474;
+      --border: #eae5f1;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(90%, 1180px);
+      margin: auto;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      letter-spacing: -.7px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 4.7rem);
+      max-width: 850px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    p {
+      color: var(--grey);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 12px 22px;
+      border-radius: 9px;
+      font-size: .92rem;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--purple);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--purple-dark);
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    .logo span {
+      color: var(--purple);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--purple);
+    }
+
+    .hero {
+      padding: 95px 0 85px;
+      background:
+        radial-gradient(
+          ellipse at 90% 15%,
+          rgba(113,56,212,.13),
+          transparent 40%
+        ),
+        #fff;
+    }
+
+    .hero p.description {
+      max-width: 760px;
+      margin: 25px 0 28px;
+      font-size: 1.08rem;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 18px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      padding: 32px;
+      border: 1px solid #e7dcff;
+      background: var(--light);
+      border-radius: 20px;
+    }
+
+    .service-number {
+      display: inline-grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 22px;
+      border-radius: 13px;
+      background: var(--white);
+      color: var(--purple);
+      font-weight: 900;
+    }
+
+    .service-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    .service-card > p {
+      margin-bottom: 22px;
+    }
+
+    .service-card h4 {
+      font-size: .94rem;
+      margin-bottom: 10px;
+    }
+
+    .deliverables {
+      list-style: none;
+      margin-bottom: 22px;
+    }
+
+    .deliverables li {
+      position: relative;
+      padding: 5px 0 5px 22px;
+      color: var(--grey);
+      font-size: .94rem;
+    }
+
+    .deliverables li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--purple);
+      font-weight: 900;
+    }
+
+    .best-for {
+      padding-top: 17px;
+      border-top: 1px solid #dfd1f8;
+      font-size: .9rem;
+    }
+
+    .process {
+      background: #faf8fd;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .process-card {
+      padding-top: 20px;
+      border-top: 2px solid #d9c6ff;
+    }
+
+    .process-card strong {
+      display: block;
+      color: var(--purple);
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .process-card p {
+      font-size: .93rem;
+    }
+
+    .consultation {
+      padding: 85px 0;
+    }
+
+    .consultation-box {
+      padding: 60px 35px;
+      border-radius: 25px;
+      color: white;
+      background: linear-gradient(135deg, #7138d4, #5021a4);
+      text-align: center;
+    }
+
+    .consultation-box h2 {
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .consultation-box > p {
+      max-width: 680px;
+      margin: 0 auto 25px;
+      color: #eee5ff;
+    }
+
+    .consultation-box .eyebrow {
+      color: #e2d1ff;
+    }
+
+    .consultation-box .btn {
+      color: var(--purple-dark);
+      background: white;
+    }
+
+    .offer-note {
+      margin-top: 17px;
+      font-size: .85rem;
+    }
+
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 850px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-inner {
+        flex-wrap: wrap;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: .82rem;
+      }
+
+      .nav-inner > .btn {
+        padding: 10px 12px;
+        font-size: .8rem;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 25px;
+      }
+
+      .consultation {
+        padding: 15px 0 65px;
+      }
+
+      .consultation-box {
+        padding: 42px 22px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style></head><body>  <header class="navbar">
+    <div class="container nav-inner">  <a class="logo" href="index.html">
+    OS<span>Labs</span>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <a
+    class="btn btn-primary"
+    href="https://wa.me/2348103895850"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Let's Talk ↗
+  </a>
+
+</div>
+
+  </header>  <main><!-- HERO -->
+
+<section class="hero">
+  <div class="container">
+
+    <p class="eyebrow">Our Services</p>
+
+    <h1>
+      YOUR DIGITAL PRESENCE,
+      BUILT WITH PURPOSE.
+    </h1>
+
+    <p class="description">
+      Your business deserves more than scattered digital activities.
+      It needs a professional, consistent, and strategic online
+      presence that supports your business goals.
+
+      At OS Labs, we combine strategy, creativity, and digital
+      execution to help businesses strengthen their online presence,
+      communicate their value, and connect with the right audience.
+    </p>
+
+    <a
+      class="btn btn-primary"
+      href="https://wa.me/2348103895850?text=Hello%20OS%20Labs%2C%20I%27d%20like%20to%20discuss%20your%20services."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Discuss Your Business on WhatsApp ↗
+    </a>
+
+  </div>
+</section>
+
+<!-- SIX SERVICES -->
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">What We Offer</p>
+      <h2>DIGITAL SOLUTIONS THAT SUPPORT YOUR GOALS.</h2>
+      <p>
+        Explore our services to understand what we do,
+        what each service includes, and how it may support
+        your business.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service-card" id="digital-strategy">
+
+        <span class="service-number">01</span>
+
+        <h3>Digital Presence Strategy</h3>
+
+        <p>
+          Build a stronger foundation for your business online.
+          We examine how your brand appears across digital channels
+          and identify opportunities to improve its positioning.
+        </p>
+
+        <h4>Key Deliverables</h4>
+
+        <ul class="deliverables">
+          <li>Digital presence assessment</li>
+          <li>Competitor and market research</li>
+          <li>Audience and positioning analysis</li>
+          <li>Review of online brand consistency</li>
+          <li>Identification of visibility gaps</li>
+          <li>Practical digital growth recommendations</li>
+        </ul>
+
+        <p class="best-for">
+          <strong>Best suited for:</strong>
+          Businesses seeking clearer positioning and a more
+          coordinated online presence.
+        </p>
+
+      </article>
+
+      <article class="service-card" id="website-design">
+
+        <span class="service-number">02</span>
+
+        <h3>Website Design</h3>
+
+        <p>
+          Create a professional website that communicates your
+          value, establishes credibility, and guides visitors
+          towards meaningful action.
+        </p>
+
+        <h4>Key Deliverables</h4>
+
+        <ul class="deliverables">
+          <li>Business website design</li>
+          <li>Landing page design</li>
+          <li>E-commerce website design</li>
+          <li>Website content and layout optimization</li>
+          <li>Mobile-responsive layouts</li>
+          <li>Clear calls to action and navigation</li>
+        </ul>
+
+        <p class="best-for">
+          <strong>Best suited for:</strong>
+          Businesses that need a new website, want to improve
+          an existing site, or want to sell products online.
+        </p>
+
+      </article>
+
+      <article class="service-card" id="social-media">
+
+        <span class="service-number">03</span>
+
+        <h3>Social Media Optimization</h3>
+
+        <p>
+          Present your business more consistently across social
+          platforms through clearer messaging, professional
+          profiles, and purposeful content planning.
+        </p>
+
+        <h4>Key Deliverables</h4>
+
+        <ul class="deliverables">
+          <li>Social media profile optimization</li>
+          <li>Bio and business description improvement</li>
+          <li>Brand consistency across platforms</li>
+          <li>Content strategy and planning</li>
+          <li>Promotional graphics and creative direction</li>
+          <li>Profile call-to-action optimization</li>
+        </ul>
+
+        <p class="best-for">
+          <strong>Best suited for:</strong>
+          Businesses that need a more professional,
+          consistent, and credible social media presence.
+        </p>
+
+      </article>
+
+      <article class="service-card" id="digital-marketing">
+
+        <span class="service-number">04</span>
+
+        <h3>Digital Marketing</h3>
+
+        <p>
+          Develop a more structured approach to reaching relevant
+          audiences through digital marketing activities aligned
+          with your business objectives.
+        </p>
+
+        <h4>Key Deliverables</h4>
+
+        <ul class="deliverables">
+          <li>Digital marketing strategy</li>
+          <li>Campaign planning and execution</li>
+          <li>Audience research and targeting</li>
+          <li>Marketing message development</li>
+          <li>Content and promotional planning</li>
+          <li>Marketing performance analysis</li>
+        </ul>
+
+        <p class="best-for">
+          <strong>Best suited for:</strong>
+          Businesses that want to coordinate their marketing
+          activities around clearer objectives.
+        </p>
+
+      </article>
+
+      <article class="service-card" id="paid-advertising">
+
+        <span class="service-number">05</span>
+
+        <h3>Paid Advertising</h3>
+
+        <p>
+          Plan targeted campaigns designed to reach relevant
+          audiences, promote specific offers, and support
+          measurable business goals.
+        </p>
+
+        <h4>Key Deliverables</h4>
+
+        <ul class="deliverables">
+          <li>Advertising campaign strategy and setup</li>
+          <li>Audience targeting</li>
+          <li>Ad creative coordination</li>
+          <li>Campaign monitoring</li>
+          <li>Performance reporting</li>
+          <li>Optimization recommendations</li>
+        </ul>
+
+        <p class="best-for">
+          <strong>Best suited for:</strong>
+          Businesses ready to promote their products or services
+          through paid digital campaigns.
+        </p>
+
+        <p style="margin-top:14px;font-size:.85rem;">
+          Advertising spend is separate from service fees.
+          Results depend on several factors and are not guaranteed.
+        </p>
+
+      </article>
+
+      <article class="service-card" id="brand-identity">
+
+        <span class="service-number">06</span>
+
+        <h3>Brand Identity & Visual Content</h3>
+
+        <p>
+          Develop consistent visual communication that helps
+          your business look professional and become easier
+          for customers to recognize.
+        </p>
+
+        <h4>Key Deliverables</h4>
+
+        <ul class="deliverables">
+          <li>Promotional graphics</li>
+          <li>Social media creatives</li>
+          <li>Brand identity materials</li>
+          <li>Visual content direction</li>
+          <li>Marketing campaign visuals</li>
+          <li>Digital promotional materials</li>
+        </ul>
+
+        <p class="best-for">
+          <strong>Best suited for:</strong>
+          Businesses that need consistent branding and
+          professional visual communication.
+        </p>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROCESS -->
+
+<section class="section process">
+  <div class="container">
+
+    <div class="section-heading">
+      <p class="eyebrow">Our Process</p>
+      <h2>FROM STRATEGY TO EXECUTION.</h2>
+      <p>
+        A straightforward process designed to keep the work
+        focused on your business objectives.
+      </p>
+    </div>
+
+    <div class="process-grid">
+
+      <article class="process-card">
+        <strong>01</strong>
+        <h3>Understand</h3>
+        <p>
+          We discuss your business, audience, challenges,
+          and goals.
+        </p>
+      </article>
+
+      <article class="process-card">
+        <strong>02</strong>
+        <h3>Recommend</h3>
+        <p>
+          We propose a practical approach suited to your
+          needs and objectives.
+        </p>
+      </article>
+
+      <article class="process-card">
+        <strong>03</strong>
+        <h3>Implement</h3>
+        <p>
+          We execute the agreed work according to the
+          project scope and timeline.
+        </p>
+      </article>
+
+      <article class="process-card">
+        <strong>04</strong>
+        <h3>Evaluate</h3>
+        <p>
+          Where appropriate, we review performance and
+          recommend improvements.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FREE CONSULTATION -->
+
+<section class="consultation">
+  <div class="container">
+
+    <div class="consultation-box">
+
+      <p class="eyebrow">Start With a Conversation</p>
+
+      <h2>BOOK YOUR FREE 30-MINUTE CONSULTATION.</h2>
+
+      <p>
+        Let's discuss your business, understand your current
+        digital presence, and explore opportunities to improve
+        your online visibility and customer acquisition.
+
+        No commitment required. Just a focused conversation
+        about your business goals.
+      </p>
+
+      <a
+        class="btn"
+        href="https://wa.me/2348103895850?text=Hello%20OS%20Labs%2C%20I%27d%20like%20to%20book%20my%20free%2030-minute%20consultation."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book Your Free Consultation ↗
+      </a>
+
+      <p class="offer-note">
+        30 minutes. Zero consultation fees. No commitment required.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+  </main>  <!-- FOOTER -->  <footer class="footer">
+    <div class="container footer-inner">  <a class="logo" href="index.html">
+    OS<span>Labs</span>
+  </a>
+
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <p>© 2026 OS Labs. All rights reserved.</p>
+
+</div>
+
+  </footer></body>
+</html>
