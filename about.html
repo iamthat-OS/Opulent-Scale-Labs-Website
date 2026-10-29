@@ -1,0 +1,773 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the story, mission, values, and founder behind OS Labs, a digital presence and marketing partner helping businesses build credibility and growth opportunities.">
+  <meta name="theme-color" content="#ffffff">
+  <title>About Us | OS Labs — Your Growth Begins Here</title>  <style>
+    :root {
+      --purple: #6c42e8;
+      --purple-dark: #512bc4;
+      --purple-light: #f2edff;
+      --ink: #171522;
+      --muted: #6e6a7c;
+      --line: #e9e6f0;
+      --white: #ffffff;
+      --surface: #faf9fc;
+      --radius: 20px;
+      --shadow: 0 12px 35px rgba(34, 20, 76, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .announcement {
+      padding: 9px 15px;
+      background: var(--ink);
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 850;
+      letter-spacing: -1.2px;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--purple); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    nav a:hover,
+    nav a.active { color: var(--purple); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--purple);
+      color: white;
+      font-size: 13px;
+      font-weight: 750;
+      transition: .2s ease;
+    }
+
+    .button:hover {
+      background: var(--purple-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: white;
+      color: var(--purple);
+      border: 1px solid #dcd1ff;
+    }
+
+    .button-outline:hover {
+      background: var(--purple-light);
+      color: var(--purple-dark);
+    }
+
+    .hero {
+      padding: 95px 0 85px;
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(108,66,232,.11), transparent 35%),
+        linear-gradient(180deg, #fbfaff 0%, #fff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 30px;
+      background: var(--purple-light);
+      color: var(--purple-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.17;
+      letter-spacing: -1px;
+    }
+
+    h1 {
+      margin: 23px 0;
+      font-size: clamp(40px, 5.5vw, 62px);
+      font-weight: 850;
+    }
+
+    .gradient-text { color: var(--purple); }
+
+    .hero-copy > p {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid #e8e0ff;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 75% 20%, #fff 0, transparent 28%),
+        linear-gradient(145deg, #f2edff, #d9ceff);
+    }
+
+    .orbit {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(108,66,232,.22);
+      border-radius: 50%;
+    }
+
+    .orbit-two {
+      width: 190px;
+      height: 190px;
+    }
+
+    .hero-monogram {
+      position: relative;
+      z-index: 1;
+      width: 130px;
+      height: 130px;
+      display: grid;
+      place-items: center;
+      border-radius: 35px;
+      background: linear-gradient(145deg, #7955ef, #4c2ab5);
+      color: white;
+      font-size: 55px;
+      font-weight: 900;
+      letter-spacing: -4px;
+      box-shadow: 0 22px 55px rgba(79,42,184,.3);
+    }
+
+    .floating-label {
+      position: absolute;
+      z-index: 2;
+      padding: 11px 14px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 12px;
+      background: rgba(255,255,255,.9);
+      box-shadow: var(--shadow);
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .label-top { top: 45px; left: 20px; }
+    .label-bottom { right: 18px; bottom: 43px; }
+
+    .section { padding: 85px 0; }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      margin: 14px 0;
+      font-size: clamp(30px, 4vw, 44px);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: 55px;
+    }
+
+    .story-copy h2 {
+      margin-bottom: 20px;
+      font-size: clamp(29px, 4vw, 42px);
+    }
+
+    .story-copy p {
+      margin-bottom: 17px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .principle-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .principle-card h3 {
+      margin-bottom: 18px;
+      font-size: 22px;
+    }
+
+    .principle {
+      display: flex;
+      gap: 13px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle:last-child { border-bottom: 0; }
+
+    .principle-icon {
+      flex-shrink: 0;
+      width: 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-weight: 900;
+    }
+
+    .principle h4 {
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .principle p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .purpose-section { background: var(--surface); }
+
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .purpose-card {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+    }
+
+    .purpose-label {
+      margin-bottom: 15px;
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .purpose-card h3 {
+      margin-bottom: 13px;
+      font-size: 25px;
+    }
+
+    .purpose-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .value-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: white;
+      transition: .2s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .value-number {
+      margin-bottom: 19px;
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 1px;
+    }
+
+    .value-card h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .founder-section {
+      background: linear-gradient(180deg, white, #fbfaff);
+    }
+
+    .founder-card {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 25px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .founder-visual {
+      min-height: 390px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #eee8ff, #d5c8ff);
+    }
+
+    .founder-placeholder {
+      width: 150px;
+      height: 150px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 40px;
+      background: rgba(255,255,255,.65);
+      color: var(--purple);
+      font-size: 49px;
+      font-weight: 900;
+      letter-spacing: -3px;
+    }
+
+    .founder-content {
+      padding: 45px;
+      align-self: center;
+    }
+
+    .founder-content h2 {
+      margin: 16px 0 8px;
+      font-size: clamp(28px, 3.5vw, 38px);
+    }
+
+    .founder-role {
+      margin-bottom: 22px;
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .founder-content > p {
+      margin-bottom: 15px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .founder-education {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: var(--surface);
+      font-size: 12px;
+    }
+
+    .founder-education strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .process-card {
+      padding: 24px;
+      border-top: 3px solid var(--purple);
+      border-radius: 0 0 15px 15px;
+      background: var(--surface);
+    }
+
+    .process-card span {
+      display: block;
+      margin-bottom: 19px;
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 1px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .cta-section { padding: 80px 0; }
+
+    .cta-box {
+      padding: 65px 30px;
+      border-radius: 25px;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(255,255,255,.14), transparent 30%),
+        linear-gradient(130deg, #241348, #6840df);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      max-width: 700px;
+      margin: 0 auto 17px;
+      font-size: clamp(30px, 4.5vw, 46px);
+    }
+
+    .cta-box p {
+      max-width: 590px;
+      margin: 0 auto 25px;
+      color: rgba(255,255,255,.8);
+      font-size: 14px;
+    }
+
+    .cta-box .button {
+      background: white;
+      color: var(--purple-dark);
+    }
+
+    .cta-box .button:hover { background: #f1ecff; }
+
+    footer {
+      padding: 45px 0 25px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-main {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand { max-width: 330px; }
+
+    .footer-brand p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .footer-links a {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links a:hover { color: var(--purple); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-art { min-height: 300px; }
+      .story-grid { grid-template-columns: 1fr; gap: 30px; }
+      .founder-card { grid-template-columns: 1fr; }
+      .founder-visual { min-height: 270px; }
+      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 600px) {
+      .container { width: 91%; }
+      .navbar { min-height: 68px; gap: 10px; }
+      .logo { font-size: 22px; }
+      nav { gap: 10px; }
+      nav a { font-size: 11px; }
+      .nav-cta { display: none; }
+      .hero { padding: 65px 0; }
+      .hero-copy > p { font-size: 14px; }
+      .section { padding: 62px 0; }
+      .purpose-grid, .values-grid, .process-grid { grid-template-columns: 1fr; }
+      .purpose-card, .principle-card { padding: 24px; }
+      .founder-content { padding: 27px; }
+      .cta-box { padding: 45px 20px; }
+      .footer-main { gap: 25px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style></head><body>
+  <div class="announcement">
+    Your Growth Begins Here — Strategy before execution.
+  </div>  <header>
+    <div class="container navbar">
+      <a class="logo" href="index.html" aria-label="OS Labs homepage">OS<span> Labs</span></a>  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a class="active" href="about.html">About</a>
+  </nav>
+
+  <a class="button nav-cta" href="https://wa.me/2348103895850?text=Hello%20OS%20Labs%2C%20I%27d%20like%20to%20book%20my%20free%2030-minute%20consultation." target="_blank" rel="noopener noreferrer">Let's Talk ↗</a>
+</div>
+
+  </header>  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">About OS Labs</span>
+          <h1>We look beyond the <span class="gradient-text">surface.</span></h1>
+          <p>
+            A business can have a website, social media pages, and marketing
+            campaigns yet still struggle to turn attention into opportunity.
+            OS Labs exists to help businesses understand what needs to improve
+            and build a stronger digital presence around their goals.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="services.html">Explore Our Services ↗</a>
+            <a class="button button-outline" href="#founder">Meet the Founder</a>
+          </div>
+        </div>    <div class="hero-art" role="img" aria-label="OS Labs brand illustration representing digital strategy and growth">
+      <div class="orbit"></div>
+      <div class="orbit orbit-two"></div>
+      <div class="hero-monogram">OS</div>
+      <div class="floating-label label-top">Strategy first</div>
+      <div class="floating-label label-bottom">Built around your goals ↗</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container story-grid">
+    <div class="story-copy">
+      <span class="eyebrow">Our Story</span>
+      <h2>Digital presence should be more than just being online.</h2>
+      <p>
+        OS Labs was built around a simple idea: businesses deserve more
+        thoughtful digital solutions. Having an online presence is useful,
+        but that presence should also communicate value, build trust, and
+        make it easier for potential customers to take the next step.
+      </p>
+      <p>
+        Our approach brings strategy, website design, social media
+        optimization, and digital marketing together. Rather than treating
+        every service as an isolated task, we look at how the pieces support
+        the business as a whole.
+      </p>
+      <p>
+        We start by understanding the business, identifying priorities,
+        and agreeing on practical next steps. The goal is to make digital
+        decisions more intentional, measurable where possible, and aligned
+        with real business needs.
+      </p>
+    </div>
+
+    <div class="principle-card">
+      <h3>What guides our work</h3>
+
+      <div class="principle">
+        <div class="principle-icon">01</div>
+        <div>
+          <h4>Understand before executing</h4>
+          <p>We first seek to understand the business, its audience, and the problem to solve.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="principle-icon">02</div>
+        <div>
+          <h4>Clarity over complexity</h4>
+          <p>We aim to make offers, messages, and customer journeys easier to understand.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="principle-icon">03</div>
+        <div>
+          <h4>Execution with purpose</h4>
+          <p>Every agreed deliverable should have a clear role in the overall strategy.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="principle-icon">04</div>
+        <div>
+          <h4>Honest evaluation</h4>
+          <p>We distinguish completed work from measurable results and never promise what we cannot control.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section purpose-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Our Purpose</span>
+      <h2>Where we're going and why it matters.</h2>
+      <p>Our purpose shapes the decisions we make, the services we develop, and the relationships we build.</p>
+    </div>
+
+    <div class="purpose-grid">
+      <article class="purpose-card">
+        <div class="purpose-label">Our Mission</div>
+        <h3>Make digital growth more intentional.</h3>
+        <p>
+          To help businesses strengthen their digital presence through
+          practical strategy, professional design, consistent branding,
+          and marketing solutions aligned with their objectives.
+        </p>
+      </article>
+
+      <article class="purpose-card">
+        <div class="purpose-label">Our Vision</div>
+        <h3>Build a technology-driven growth partner.</h3>
+        <p>
+          To grow OS Labs into a trusted digital and technology company
+          that combines strategic thinking, creative execution, and
+          emerging technology to solve meaningful business problems.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Our Values</span>
+      <h2>The principles behind every decision.</h2>
+      <p>Good work is not just about how something looks. It is also about how thoughtfully it is planned, delivered, and evaluated.</p>
+    </div>
+
+    <div class="values-grid">
+      <article class="value-card">
+        <div class="value-number">VALUE / 01</div>
+        <h3>Strategic Thinking</h3>
+        <p>We consider the business objective and customer journey before deciding which digital solution makes sense.</p>
+      </article>
+
+      <article class="value-card">
+        <div class="value-number">VALUE / 02</div>
+        <h3>Transparency</h3>
+        <p>We communicate clearly about scope, expectations, limitations, and what success can realistically mean.</p>
+      </article>
+
+      <article class="value-card">
+        <div class="value-number">VALUE / 03</div>
+        <h3>Practical Creativity</h3>
+        <p>We use design and messaging to make business information clearer, more engaging, and easier to act on.</p>
+      </article>
+
+      <article class="value-card">
+        <div class="value-number">VALUE / 04</div>
+        <h3>Continuous Learning</h3>
+        <p>We keep improving our methods as customer behaviour, platforms, and digital tools evolve.</p>
+      </article>
+
+      <article class="value-card">
+        <div class="value-number">VALUE / 05</div>
+        <h3>Accountability</h3>
+        <p>We aim to deliver the agreed work, communicate progress, and evaluate outcomes using evidence where available.</p>
+      </article>
+
+      <article class="value-card">
+        <div class="v
